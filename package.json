@@ -1,0 +1,13 @@
+{
+  "name": "postmanjenkins",
+  "version": "1.0.0",
+  "description": "Postman Tests",
+  "scripts": {
+    "api-tests-production": "newman run PendingStatus.postman_collection.json"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Fragueiro",
+  "dependencies": {
+    "newman": "^4.1.0"
+  }
+}

@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "0c383dc4-25e3-469c-9940-e4147a16a06b",
+		"name": "PendingStatus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BUSINESS_PENDING",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5a64a11e-8ff3-44d6-916c-a0af234c763d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"MERCADOPAGO REQUEST WAS SUCCESFUL\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Caller-Scopes",
+						"value": "mp_pay"
+					},
+					{
+						"key": "X-Platform",
+						"value": "android"
+					},
+					{
+						"key": "X-App-Version",
+						"value": "2.22.0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Mock-Scene",
+						"value": "BUSINESS_PENDING_FRONTEND"
+					},
+					{
+						"key": "X-Mock-Type",
+						"value": "server"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"area_code\" : \"11\",\n  \"phone\" : \"55556666\",\n  \"marketplace\" : \"NONE\",\n  \"company_id\" : 1,\n  \"operation_type\" : \"cellphone_recharge\",\n  \"transaction_amount\" : 5,\n  \"product_id\" : 1,\n  \"reason\" : \"Tel.: 11 - 55556666\",\n  \"currency_id\" : \"ARS\",\n  \"marketplace_fee\" : 0,\n  \"payment_method_id\" : \"naranja\",\n  \"installments\" : 1,\n  \"card_token_id\" : \"fb75f6c5432cdc5d0fe66ed846782e0a\",\n  \"issuer_id\" : 5,\n  \"bonus\" : 0\n}\n\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/mpmobile/cellphone_recharge?caller.id=162356435&client.id=1311377052931992&caller.siteId=MLA",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"mpmobile",
+						"cellphone_recharge"
+					],
+					"query": [
+						{
+							"key": "caller.id",
+							"value": "162356435"
+						},
+						{
+							"key": "client.id",
+							"value": "1311377052931992"
+						},
+						{
+							"key": "caller.siteId",
+							"value": "MLA"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "BUSINESS_PENDING",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Caller-Scopes",
+								"value": "mp_pay"
+							},
+							{
+								"key": "X-Platform",
+								"value": "android"
+							},
+							{
+								"key": "X-App-Version",
+								"value": "2.22.0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Mock-Scene",
+								"value": "BUSINESS_PENDING_FRONTEND"
+							},
+							{
+								"key": "X-Mock-Type",
+								"value": "server"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"area_code\" : \"11\",\n  \"phone\" : \"55556666\",\n  \"marketplace\" : \"NONE\",\n  \"company_id\" : 1,\n  \"operation_type\" : \"cellphone_recharge\",\n  \"transaction_amount\" : 5,\n  \"product_id\" : 1,\n  \"reason\" : \"Tel.: 11 - 55556666\",\n  \"currency_id\" : \"ARS\",\n  \"marketplace_fee\" : 0,\n  \"payment_method_id\" : \"naranja\",\n  \"installments\" : 1,\n  \"card_token_id\" : \"fb75f6c5432cdc5d0fe66ed846782e0a\",\n  \"issuer_id\" : 5,\n  \"bonus\" : 0\n}\n\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/mpmobile/cellphone_recharge?caller.id=162356435&client.id=1311377052931992&caller.siteId=MLA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mpmobile",
+								"cellphone_recharge"
+							],
+							"query": [
+								{
+									"key": "caller.id",
+									"value": "162356435"
+								},
+								{
+									"key": "client.id",
+									"value": "1311377052931992"
+								},
+								{
+									"key": "caller.siteId",
+									"value": "MLA"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Jul 2018 21:00:10 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "ca42b3190c8b91b01ea35f820ee7f51f",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "Vary",
+							"value": "Accept,Accept-Encoding",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "7DC9BFF9BA3136C6305BE2061BFEEC82",
+							"key": "JSESSIONID"
+						}
+					],
+					"body": "{\"formatted\":{\"detail_list\":[{\"message\":\"¿Quieres seguir ganando?\",\"description\":null,\"icon\":\"ic_gift\",\"background_color\":\"#FFFFFF\",\"actions\":[{\"label\":\"Invita a más amigos a usar la app\",\"link\":\"mercadopago://invite/wallet?type=recharge\",\"type\":\"link\"}]}],\"icon\":\"approved\",\"description\":null,\"title\":\"¡Listo! Recargaste el celular\",\"message\":\"En unos minutos tendrás el crédito disponible.\",\"actions\":[{\"id\":\"back_to_my_account\",\"label\":\"Continuar\",\"link\":\"mercadopago://home\",\"type\":\"link\"},{\"id\":\"back_to_root\",\"label\":\"Hacer otra recarga\",\"link\":null,\"type\":\"button\"}]},\"raw\":{\"payment_method_id\":\"account_money\",\"operation_type\":\"cellphone_recharge\",\"status\":\"approved\"}}"
+				}
+			]
+		}
+	]
+}
